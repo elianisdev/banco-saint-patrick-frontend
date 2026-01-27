@@ -1,23 +1,16 @@
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import { BalancePage } from "@/pages/BalancePage";
-import { LoginPage } from "@/pages/LoginPage";
-import { SessionClosedPage } from "@/pages/SessionClosedPage";
-import { NewTransactionPage } from "@/pages/NewTransactionPage";
-import TransactionsPage from "@/pages/TransactionsPage";
-import { TransactionConfirmationPage } from "@/pages/TransactionConfirmationPage";
+import { Login } from "@/pages/Login";
+import { Balance } from "@/pages/Balance";
+import { Transactions } from "@/pages/Transactions";
+import { NewTransaction } from "@/pages/NewTransaction";
 
 export const AppRouter = () => (
   <BrowserRouter>
     <Routes>
-      <Route path="/login" element={<LoginPage />} />
-      <Route path="/session-closed" element={<SessionClosedPage />} />
-      <Route path="/balance" element={<BalancePage />} />
-      <Route path="/transactions" element={<TransactionsPage />} />
-      <Route path="/transactions/new" element={<NewTransactionPage />} />
-      <Route
-        path="/transactions/confirm"
-        element={<TransactionConfirmationPage />}
-      />
+      <Route path="/login" element={<Login />} />
+      <Route path="/balance" element={<Balance />} />
+      <Route path="/transactions" element={<Transactions />} />
+      <Route path="/transactions/new" element={<NewTransaction />} />
       <Route path="*" element={<Navigate to="/login" replace />} />
     </Routes>
   </BrowserRouter>
