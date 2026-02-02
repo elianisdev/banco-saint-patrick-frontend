@@ -1,4 +1,5 @@
 import type { FC } from "react";
+import logo from "@/assets/logo.png";
 
 type HeaderProps = {
   userName?: string;
@@ -22,7 +23,7 @@ export const Header: FC<HeaderProps> = ({ userName = "Juan", onMenuClick }) => (
         </svg>
       </button>
       <div className="flex items-center gap-2 text-sm font-semibold">
-        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-white/80 text-xs">BS</span>
+        <img src={logo} alt="Banco Saint Patrick" className="h-8 w-8 rounded-full border border-white/30 bg-white object-contain" />
         <span>Banco Saint Patrick</span>
       </div>
     </div>
