@@ -11,7 +11,7 @@ export const AppRouter = () => (
       <Route path="/balance" element={<Balance />} />
       <Route path="/transactions" element={<Transactions />} />
       <Route path="/transactions/new" element={<NewTransaction />} />
-      <Route path="*" element={<Navigate to="/login" replace />} />
+      <Route path="*" element={<Navigate to="/balance" replace />} />
     </Routes>
   </BrowserRouter>
 );
