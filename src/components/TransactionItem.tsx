@@ -7,7 +7,10 @@ type TransactionItemProps = {
 };
 
 export const TransactionItem: FC<TransactionItemProps> = ({ title, date, amount }) => (
-  <div className="flex items-center justify-between rounded-md border border-surface-outline bg-white px-4 py-3 text-sm shadow-sm">
+  <div
+    className="flex items-center justify-between rounded-md border border-surface-outline bg-white px-4 py-3 text-sm shadow-sm transition hover:border-brand-olive/60 hover:bg-surface-base hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-olive focus-visible:ring-offset-2"
+    tabIndex={0}
+  >
     <div className="flex items-center gap-3">
       <div className="flex h-9 w-9 items-center justify-center rounded-full border border-surface-outline bg-surface-base text-brand-forest">
         <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
