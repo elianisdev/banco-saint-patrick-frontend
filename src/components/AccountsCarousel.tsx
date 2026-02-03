@@ -69,7 +69,7 @@ export const AccountsCarousel: FC<AccountsCarouselProps> = ({ accounts }) => {
 
       <div
         ref={containerRef}
-        className="flex snap-x snap-mandatory gap-9 overflow-x-auto no-scrollbar px-9 py-2 sm:gap-0.5 sm:px-1 md:px-1.5"
+        className="flex snap-x snap-mandatory gap-9 overflow-x-auto px-9 py-2 sm:gap-5 sm:px-5 md:gap-7 md:px-6 lg:gap-8 lg:px-6 [scrollbar-width:none] [-ms-overflow-style:none] [&::-webkit-scrollbar]:hidden"
       >
         {safeAccounts.map((account, index) => (
           <div
@@ -82,7 +82,7 @@ export const AccountsCarousel: FC<AccountsCarouselProps> = ({ accounts }) => {
               minWidth: "72%",
             }}
           >
-            <div className="w-[64vw] sm:w-[50vw] md:w-[42vw] lg:w-[36vw] xl:w-[34vw]">
+            <div className="w-[64vw] sm:w-[42vw] md:w-[34vw] lg:w-[28vw] xl:w-[26vw]">
               <AccountCard {...account} />
             </div>
           </div>

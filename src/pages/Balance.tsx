@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Header } from "@/components/Header";
 import { AccountCard } from "@/components/AccountCard";
 import { ActionTile } from "@/components/ActionTile";
@@ -24,13 +25,14 @@ const transactions = Array.from({ length: 9 }).map((_, idx) => ({
 
 export const Balance = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div className="min-h-screen bg-surface-base text-brand-forest">
       <Header userName="Juan" onMenuClick={() => setIsMenuOpen(true)} />
 
       <main className="mx-auto flex w-full max-w-6xl flex-col gap-6 px-3 py-6 sm:px-4 md:px-6">
-        <h2 className="text-xl font-semibold">Tus cuentas</h2>
+        <h2 className="font-arimo text-[32px] font-bold leading-[1] text-black">Tus cuentas</h2>
 
         <AccountsCarousel accounts={accounts} />
 
@@ -49,6 +51,7 @@ export const Balance = () => {
             label="Transferencia Nueva"
             borderColor="#6CAF7F"
             textColor="#2D6C43"
+            onClick={() => navigate("/transactions/new")}
             icon={
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M4 12h9m0 0l-3.5-3.5M13 12l-3.5 3.5" />
