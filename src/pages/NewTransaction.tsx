@@ -79,6 +79,7 @@ export const NewTransaction = () => {
   const [amount, setAmount] = useState("");
   const [concept, setConcept] = useState("");
   const [showModal, setShowModal] = useState(false);
+  const [showSuccess, setShowSuccess] = useState(false);
   const navigate = useNavigate();
 
   const charsLeft = 50 - reference.length;
@@ -375,8 +376,45 @@ export const NewTransaction = () => {
               <button
                 type="button"
                 className="w-1/2 rounded-md bg-brand-olive px-4 py-2 text-sm font-semibold text-brand-forest shadow-sm transition hover:brightness-95"
+                onClick={() => {
+                  setShowModal(false);
+                  setShowSuccess(true);
+                }}
               >
                 Confirmar
+              </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {showSuccess && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 px-3">
+          <div className="w-full max-w-md rounded-lg bg-white p-6 text-center shadow-2xl">
+            <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-brand-olive/30 text-brand-forest">
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+              </svg>
+            </div>
+            <h3 className="text-lg font-semibold text-brand-forest">Transferencia confirmada</h3>
+            <p className="mt-2 text-sm text-gray-700">Se procesó tu transferencia.</p>
+            <div className="mt-4 flex gap-3">
+              <button
+                type="button"
+                onClick={() => setShowSuccess(false)}
+                className="w-1/2 rounded-md border border-surface-outline bg-white px-4 py-2 text-sm font-semibold text-brand-forest shadow-sm transition hover:bg-surface-base"
+              >
+                Cerrar
+              </button>
+              <button
+                type="button"
+                onClick={() => {
+                  setShowSuccess(false);
+                  navigate("/balance");
+                }}
+                className="w-1/2 rounded-md bg-brand-olive px-4 py-2 text-sm font-semibold text-brand-forest shadow-sm transition hover:brightness-95"
+              >
+                Ir al inicio
               </button>
             </div>
           </div>
