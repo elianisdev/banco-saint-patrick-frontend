@@ -6,6 +6,7 @@ import { ActionTile } from "@/components/ActionTile";
 import { TransactionItem } from "@/components/TransactionItem";
 import { Sidebar } from "@/components/Sidebar";
 import { AccountsCarousel } from "@/components/AccountsCarousel";
+import { ModalAlias } from "@/components/ModalAlias";
 
 const accounts = [
   { name: "Caja de Ahorro", mask: "4521", balance: "$3.325.000" },
@@ -25,7 +26,7 @@ const transactions = Array.from({ length: 9 }).map((_, idx) => ({
 
 export const Balance = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navigate = useNavigate();
+  const [openAliasModal, setOpenAliasModal] = useState(false);
 
   return (
     <div className="min-h-screen bg-surface-base text-brand-forest">
@@ -63,6 +64,7 @@ export const Balance = () => {
             label="Tu CBU/ALIAS"
             borderColor="#5C74A4"
             textColor="#2B3A5C"
+            onClick={() => setOpenAliasModal(true)}
             icon={
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M5 7h14M5 12h14M5 17h9" />
@@ -106,6 +108,7 @@ export const Balance = () => {
           <Sidebar onClose={() => setIsMenuOpen(false)} />
         </div>
       </div>
+      <ModalAlias open={openAliasModal} onClose={() => setOpenAliasModal(false)} />
     </div>
   );
 };
