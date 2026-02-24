@@ -17,6 +17,9 @@ export default {
           outline: "#e0e0d3",
         },
       },
+      fontFamily: {
+        arimo: ['"Arimo"', "sans-serif"],
+      },
     },
   },
   plugins: [],
