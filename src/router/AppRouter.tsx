@@ -5,6 +5,7 @@ import { Transactions } from "@/pages/Transactions";
 import { NewTransaction } from "@/pages/NewTransaction";
 import { Verificacion } from "@/pages/Verificacion";
 
+
 export const AppRouter = () => (
   <BrowserRouter>
     <Routes>

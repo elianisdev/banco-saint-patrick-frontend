@@ -5,14 +5,16 @@ type ActionTileProps = {
   icon: ReactNode;
   borderColor: string;
   textColor: string;
+  onClick?: () => void; 
 };
 
-export const ActionTile: FC<ActionTileProps> = ({ label, icon, borderColor, textColor }) => {
+export const ActionTile: FC<ActionTileProps> = ({ label, icon, borderColor, textColor, onClick }) => {
   return (
     <button
       type="button"
       className="flex w-full items-center justify-center gap-3 rounded-md border bg-surface-card px-4 py-4 text-sm font-semibold shadow-sm transition hover:shadow-md"
       style={{ borderColor, color: textColor }}
+      onClick={onClick}
     >
       <span>{icon}</span>
       <span>{label}</span>
