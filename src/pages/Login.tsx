@@ -50,8 +50,8 @@ export const Login = () => {
               {...register("usuario", {
                 required: "El usuario es obligatorio",
                 minLength: {
-                  value: 4,
-                  message: "Mínimo 4 caracteres",
+                  value: 8,
+                  message: "Mínimo 8 caracteres",
                 },
               })}
             />

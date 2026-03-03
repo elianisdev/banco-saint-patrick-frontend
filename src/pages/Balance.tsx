@@ -6,6 +6,7 @@ import { TransactionItem } from "@/components/TransactionItem";
 import { Sidebar } from "@/components/Sidebar";
 import { AccountsCarousel } from "@/components/AccountsCarousel";
 import { ModalAlias } from "@/components/ModalAlias";
+import { useNavigate } from "react-router-dom";
 
 const accounts = [
   { name: "Caja de Ahorro", mask: "4521", balance: "$3.325.000" },
@@ -24,6 +25,11 @@ const transactions = Array.from({ length: 9 }).map((_, idx) => ({
 }));
 
 export const Balance = () => {
+  const navigate = useNavigate();
+  const deposito = () => {
+    navigate("/deposit");
+  }
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [openAliasModal, setOpenAliasModal] = useState(false);
 
@@ -41,6 +47,7 @@ export const Balance = () => {
             label="Ingresar"
             borderColor="#E8B47A"
             textColor="#B66D1D"
+            onClick={() => deposito()}
             icon={
               <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v12m0 0l-4-4m4 4l4-4" />
