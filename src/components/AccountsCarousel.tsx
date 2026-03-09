@@ -82,7 +82,7 @@ export const AccountsCarousel: FC<AccountsCarouselProps> = ({ accounts }) => {
               minWidth: "72%",
             }}
           >
-            <div className="w-[64vw] sm:w-[50vw] md:w-[42vw] lg:w-[36vw] xl:w-[34vw]">
+            <div className="w-[64vw] sm:w-[42vw] md:w-[34vw] lg:w-[28vw] xl:w-[26vw]">
               <AccountCard {...account} />
             </div>
           </div>

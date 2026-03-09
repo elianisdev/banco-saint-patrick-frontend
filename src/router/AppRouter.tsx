@@ -4,7 +4,6 @@ import { Balance } from "@/pages/Balance";
 import { Transactions } from "@/pages/Transactions";
 import { NewTransaction } from "@/pages/NewTransaction";
 import { Verificacion } from "@/pages/Verificacion";
-import { Deposit } from "@/pages/Deposit";
 
 
 export const AppRouter = () => (
@@ -15,7 +14,6 @@ export const AppRouter = () => (
       <Route path="/transactions" element={<Transactions />} />
       <Route path="/transactions/new" element={<NewTransaction />} />
       <Route path="/verificacion" element={<Verificacion />} />
-      <Route path="/deposit" element={<Deposit />} />
       <Route path="*" element={<Navigate to="/balance" replace />} />
     </Routes>
   </BrowserRouter>
